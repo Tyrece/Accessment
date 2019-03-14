@@ -48,9 +48,61 @@
 		<div class="container">
 			<h1 class="jumbotron-heading">literalMe</h1>
 			<p class="lead text-muted">Glad you found your way here. It's always a good time to read a book. Find your passion amongst the stars by choosing from our many categories tailored just for you.</p>
-			<p>
-				<a href="#" class="btn btn-primary my-2">Top Rated Book</a>
-			</p>
+			
+
+			<button type="button" class="btn btn-primary js-add" data-toggle="modal" data-target="#exampleModal">
+  Add Book
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Title</span>
+        </div>
+        <input type="text" name="Title" class="form-control" placeholder="John" aria-label="Title" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Author</span>
+        </div>
+        <input type="text" name="Author" class="form-control" placeholder="Brown" aria-label="Author" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Discription</span>
+        </div>
+        <textarea   type="text" name="LastName" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium tempora amet vel quam, voluptatem eveniet! Cum sed repellendus, nam error soluta recusandae consequuntur natus ratione quis consectetur? Obcaecati, dolorum, aliquam." aria-label="LastName" aria-describedby="basic-addon1"> ></textarea>
+        
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">BookCover</span>
+        </div>
+        <input type="text" name="BookCover" class="form-control" placeholder="kool.png" aria-label="BookCover" aria-describedby="basic-addon1">
+      </div>
+
+      </div>
+
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success js-cancel" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-info js-add" >Add</button>
+      </div>
+    </div>
+  </div>
+</div>
 		</div>
 	</section>
 </template>
@@ -63,7 +115,58 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="card mb-4 shadow-sm">
-							<img src='data:image/svg+xml;charset=UTF-8,<svg%20width%3D"348"%20height%3D"225"%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20viewBox%3D"0%200%20348%20225"%20preserveAspectRatio%3D"none"><defs><style%20type%3D"text%2Fcss">%23holder_1697acec537%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20<%2Fstyle><%2Fdefs><g%20id%3D"holder_1697acec537"><rect%20width%3D"348"%20height%3D"225"%20fill%3D"%2355595c"><%2Frect><g><text%20x%3D"116.7265625"%20y%3D"120.3">Thumbnail<%2Ftext><%2Fg><%2Fg><%2Fsvg>' alt="temp photo">
+							<img type="button" data-toggle="modal" src='https://images.gr-assets.com/books/1524596540l/36124936.jpg' alt="temp photo" data-target="#exampleModal">
+
+							<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Title</span>
+        </div>
+        <input type="text" name="FirstName" class="form-control" placeholder="John" aria-label="FirstName" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Author</span>
+        </div>
+        <input type="text" name="LastName" class="form-control" placeholder="Brown" aria-label="LastName" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Discription</span>
+        </div>
+        <textarea   type="text" name="LastName" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Brown" aria-label="LastName" aria-describedby="basic-addon1"> ></textarea>
+        
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Book Cover</span>
+        </div>
+        <input type="text" name="Profilepic" class="form-control" placeholder="kool.png" aria-label="Profilepic" aria-describedby="basic-addon1">
+      </div>
+
+      </div>
+
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success js-cancel" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-info js-add" >Add</button>
+      </div>
+    </div>
+  </div>
+</div>
+							
 							<div class="card-body">
 								<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 								<div class="d-flex justify-content-between align-items-center">
@@ -71,29 +174,156 @@
 										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
 										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									 <div class="row justify-content-around">
+      <div class="col-sm-7">
+        <div class="row justify-content-between">
+          <div class="col-sm-5 text-center">            
+            <button class="btn btn-primary js-like">Like</button>
+            <h1 class="rateMe">{{like}}</h1>
+          </div>
+          <div class="col-sm-5 text-center">
+            <button class="btn btn-danger js-dislike">Dislike</button>
+            <h1 class="rateMe">{{dislike}}</h1>
+          </div>
+        </div>
+      </div>
+    </div> 
+									
 								</div>
 							</div>
 						</div>
 					</div> <!-- /col -->
 					<div class="col-md-4">
 						<div class="card mb-4 shadow-sm">
-							<img src='data:image/svg+xml;charset=UTF-8,<svg%20width%3D"348"%20height%3D"225"%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20viewBox%3D"0%200%20348%20225"%20preserveAspectRatio%3D"none"><defs><style%20type%3D"text%2Fcss">%23holder_1697acec537%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20<%2Fstyle><%2Fdefs><g%20id%3D"holder_1697acec537"><rect%20width%3D"348"%20height%3D"225"%20fill%3D"%2355595c"><%2Frect><g><text%20x%3D"116.7265625"%20y%3D"120.3">Thumbnail<%2Ftext><%2Fg><%2Fg><%2Fsvg>' alt="temp photo">
+							<img type="button" data-toggle="modal" src='https://images.gr-assets.com/books/1524596540l/36124936.jpg' alt="temp photo" data-target="#exampleModal">
+
+							<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Title</span>
+        </div>
+        <input type="text" name="FirstName" class="form-control" placeholder="John" aria-label="FirstName" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Author</span>
+        </div>
+        <input type="text" name="LastName" class="form-control" placeholder="Brown" aria-label="LastName" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Discription</span>
+        </div>
+        <textarea   type="text" name="LastName" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Brown" aria-label="LastName" aria-describedby="basic-addon1"> ></textarea>
+        
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Book Cover</span>
+        </div>
+        <input type="text" name="Profilepic" class="form-control" placeholder="kool.png" aria-label="Profilepic" aria-describedby="basic-addon1">
+      </div>
+
+      </div>
+
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success js-cancel" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-info js-add" >Add</button>
+      </div>
+    </div>
+  </div>
+</div>
 							<div class="card-body">
 								<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
 										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+
 									</div>
-									<small class="text-muted">9 mins</small>
+									 <div class="row justify-content-around">
+      <div class="col-sm-7">
+        <div class="row justify-content-between">
+          <div class="col-sm-5 text-center">            
+            <button class="btn btn-primary js-like">Like</button>
+            <h1 class="rateMe">{{like}}</h1>
+          </div>
+          <div class="col-sm-5 text-center">
+            <button class="btn btn-danger js-dislike">Dislike</button>
+            <h1 class="rateMe">{{dislike}}</h1>
+          </div>
+        </div>
+      </div>
+    </div> 
+									
 								</div>
 							</div>
 						</div>
 					</div> <!-- /col -->
 					<div class="col-md-4">
 						<div class="card mb-4 shadow-sm">
-							<img src='data:image/svg+xml;charset=UTF-8,<svg%20width%3D"348"%20height%3D"225"%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20viewBox%3D"0%200%20348%20225"%20preserveAspectRatio%3D"none"><defs><style%20type%3D"text%2Fcss">%23holder_1697acec537%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20<%2Fstyle><%2Fdefs><g%20id%3D"holder_1697acec537"><rect%20width%3D"348"%20height%3D"225"%20fill%3D"%2355595c"><%2Frect><g><text%20x%3D"116.7265625"%20y%3D"120.3">Thumbnail<%2Ftext><%2Fg><%2Fg><%2Fsvg>' alt="temp photo">
+							<img type="button" data-toggle="modal" src='https://images.gr-assets.com/books/1524596540l/36124936.jpg' alt="temp photo" data-target="#exampleModal">
+
+							<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Title</span>
+        </div>
+        <input type="text" name="FirstName" class="form-control" placeholder="John" aria-label="FirstName" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Author</span>
+        </div>
+        <input type="text" name="LastName" class="form-control" placeholder="Brown" aria-label="LastName" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Discription</span>
+        </div>
+        <textarea   type="text" name="LastName" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Brown" aria-label="LastName" aria-describedby="basic-addon1"> ></textarea>
+        
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Book Cover</span>
+        </div>
+        <input type="text" name="Profilepic" class="form-control" placeholder="kool.png" aria-label="Profilepic" aria-describedby="basic-addon1">
+      </div>
+
+      </div>
+
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success js-cancel" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-info js-add" >Add</button>
+      </div>
+    </div>
+  </div>
+</div>
 							<div class="card-body">
 								<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 								<div class="d-flex justify-content-between align-items-center">
@@ -101,7 +331,21 @@
 										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
 										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
 									</div>
-									<small class="text-muted">9 mins</small>
+									 <div class="row justify-content-around">
+      <div class="col-sm-7">
+        <div class="row justify-content-between">
+          <div class="col-sm-5 text-center">            
+            <button class="btn btn-primary js-like">Like</button>
+            <h1 class="rateMe">{{like}}</h1>
+          </div>
+          <div class="col-sm-5 text-center">
+            <button class="btn btn-danger js-dislike">Dislike</button>
+            <h1 class="rateMe">{{dislike}}</h1>
+          </div>
+        </div>
+      </div>
+    </div> 
+									
 								</div>
 							</div>
 						</div>
