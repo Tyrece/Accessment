@@ -4,50 +4,53 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
 import '../lib/Collections.js';
 
-Template.hello.onCreated(function helloOnCreated() {
+//Template.mainbody.onCreated(function helloOnCreated() {
   // counter starts at 0
-  this.counter = new ReactiveVar(0);
-});
+  //this.counter = new ReactiveVar(0);
+//});
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
+//Template.mainbody.helpers({
+  //counter() {
+    //return Template.instance().counter.get();
+  //},
+//});
 
-Template.hello.events({
-  'click button'(event, instance) {
+//Template.mainbody.events({
+  //'click button'(event, instance) {
     // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
+  //  instance.counter.set(instance.counter.get() + 1);
+ // },
+//});
+
+Template.mainbody.helpers({
+  cardAll(){
+    return userDB.find({});
+  }
+  
+})
+
+Template.mainbody.events({
+  'click .js-add'(event, instance){
+
+  var Ttitle = $("#addbookModal input[name='Title']").val();
+  var Aauthor = $("#addbookModal input[name='Author']").val();
+  var discription = $("#addbookModal input[name='Discription']").val();
+  var BbookCover = $("#addbookModal input[name='Bookcover']").val();
+  if (BbookCover == ""){
+          BbookCover="36124936.jpg";
+  }
+
+   $("#addbookModal input[name='Title']").val('');
+   $("#addbookModal input[name='Author']").val('');
+   $("#addbookModal input[name='Discription']").val('');
+   $("#addbookModal input[name='Bookcover']").val('');
+
+    $("#addbookModal").modal("hide");
+    userDB.insert({'Title':Ttitle, 'Author':Aauthor, 'Discription': discription, 'Bookcover':BbookCover});
+
   },
-});
 
-
-Template.myJumbo.events({
-	'click js-add'(event, instance){
-		var Title = $("#exampleModal input[name='Title']").val();
-  console.log("The Title is",Title);
-
-  var Author = $("#exampleModal input[name='Author']").val();
-  console.log("The Author is",Author);
-
-  var Discription = $("#exampleModal input[name='Discription']").val();
-  console.log("The Discription is",Discription);
-
-  var BookCover = $("#exampleModal input[name='BookCover']").val();
-  console.log("The BookCover is",BookCover);
-
-   $("#exampleModal input[name='Title']").val('');
-   $("#exampleModal input[name='Author']").val('');
-   $("#exampleModal input[name='Discription']").val('');
-   $("#exampleModal input[name='BookCover']").val('');
-
-
-    $("#exampleModal").modal("hide");
-
-	},
-
-	'click .js-like'(event, instance) { 
+  'click .js-like'(event, instance) { 
     var profID = this._id;
     var numLikes = userDB.findOne({_id:  profID}).like;
     if (!numLikes) {
@@ -56,7 +59,6 @@ Template.myJumbo.events({
     numLikes = numLikes + 1;  
     userDB.update({_id:profID}, {$set:{'like': numLikes}});
   },
-
   'click .js-dislike'(event, instance){
     var profID = this._id;
     var numDisLikes = userDB.findOne({_id:  profID}).dislike;
@@ -66,4 +68,5 @@ Template.myJumbo.events({
     numDisLikes = numDisLikes + 1;  
     userDB.update({_id:profID}, {$set:{'dislike': numDisLikes}});
   },
-})
+
+});
